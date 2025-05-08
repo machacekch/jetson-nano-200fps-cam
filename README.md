@@ -1,6 +1,8 @@
 # Jetson Nano V4L2 driver modifications to add a 640x480 200FPS mode for the Sony IMX219 (Raspberry Pi Camera 2)
 To enable this mode, you must recompile and install the L4T Linux kernel with the included modifications. `imx219_mode_tbls.h` adds a new set of image sensor register settings to enable this mode and re-enables the 720p binned mode that was removed for some reason. The modifications to the two .dtsi files are also necessary so the driver knows that these modes exist.
 
+See also the discussions [here](https://forums.developer.nvidia.com/t/120-fps-mode-support-removed-for-imx219-sensor/174327) and [here](https://forums.developer.nvidia.com/t/120fps-with-imx219-and-binned-modes/233758/39).
+
 ## Recompiling the kernel
 To recompile the kernel, you'll need to download the sources from Nvidia (linked somewhere in their Jetpack downloads area) and download a cross-compilation toolchain. I followed [this guide](https://developer.ridgerun.com/wiki/index.php?title=Jetson_Nano/Development/Building_the_Kernel_from_Source). Once you have things downloaded, these are the commands I ran (obviously, substitute the things in [] for what they ask for):
 ```
